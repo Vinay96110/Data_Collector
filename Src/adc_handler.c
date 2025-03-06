@@ -37,7 +37,8 @@ void ADC_Task(void *argument) {
     }
 }
 
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)    //DMA started in Tim3 Ineterrupt
+{
     if (hadc->Instance == ADC1) {
         xSemaphoreGiveFromISR(adcSemaphore, NULL);
     }

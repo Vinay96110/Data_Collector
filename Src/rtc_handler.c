@@ -18,7 +18,7 @@ void GetCurrentTime(char *buffer, size_t len) {
     HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
     HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 
-    snprintf(buffer, len, "%04d-%02d-%02d %02d:%02d:%02d", 
-             2000 + sDate.Year, sDate.Month, sDate.Date, 
-             sTime.Hours, sTime.Minutes, sTime.Seconds);
+    printf(buffer, len, "%04d-%02d-%02d %02d:%02d:%02d", 
+                  2000 + sDate.Year, sDate.Month, sDate.Date, 
+                  sTime.Hours, sTime.Minutes, sTime.Seconds);
 }
